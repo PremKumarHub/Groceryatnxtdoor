@@ -14,7 +14,7 @@ export const AppContextProvider = ({ children }) => {
   const [showUserLogin, setShowUserLogin]=useState(false)
   const [products, setProducts]=useState([])
   const [cartItems, setCartItems]=useState({})
-  const [searcQuery, setSearchQuery]=useState({})
+  const [searchQuery, setSearchQuery]=useState([])
 
   
   const fetchProducts=async()=>{
@@ -57,7 +57,7 @@ export const AppContextProvider = ({ children }) => {
   useEffect(()=>{
     fetchProducts()
   },[])
-  const value = { navigate, user, setUser, isSeller, setIsSeller,showUserLogin,setShowUserLogin, setShowUserLogin, products, currency,addtoCart, updateCartItem,removeFromCart, cartItems,searcQuery,setSearchQuery};
+  const value = { navigate, user, setUser, isSeller, setIsSeller,showUserLogin,setShowUserLogin, setShowUserLogin, products, currency,addtoCart, updateCartItem,removeFromCart, cartItems,searchQuery,setSearchQuery};
 
 
   return (

@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import { useAppContext } from './context/AppContex'
 import Login from './components/Login';
 import AllProducts from './Pages/AllProducts'
+import ProductCategory from './Pages/ProductCategory'
+import ProductDetails from './Pages/ProductDetails'
 
 
 function App() {
@@ -17,12 +19,16 @@ function App() {
   return (
     <div>
 
-      {isSellerPath ? null : <Navbar/>}
+      {isSellerPath ? null : <Navbar/>} 
       <Toaster/>
       <div className={'${isSellerPath ? "" :"px-6 md:px-16 lg:px-24 xl:px-32"}' }>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/products' element={<AllProducts/>} />
+          <Route path='products/:category' element={<ProductCategory/>}/>
+          <Route path='/products/:category/:id' element={<ProductDetails/>}/>
+        
+
         </Routes>
         
         </div>
