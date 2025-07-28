@@ -16,7 +16,7 @@ function ProductDetails() {
     useEffect(()=>{
         if(products.length>0){
             let productsCopy=products.slice();
-            productsCopy=productsCopy.filter((item)=>product.category===item.catego ry)
+            productsCopy=productsCopy.filter((item)=>product.category===item.category)
             setRelatedProducts(productsCopy.slice(0,5))
 }},[products])
 
