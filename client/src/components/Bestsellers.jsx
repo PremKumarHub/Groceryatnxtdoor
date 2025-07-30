@@ -23,7 +23,7 @@ function Bestsellers
 
         </div>
     </div>
-  ) 
+  )   
 }
 
 export default Bestsellers
