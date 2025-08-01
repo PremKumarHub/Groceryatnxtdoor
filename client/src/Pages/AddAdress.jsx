@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { assets } from '../assets/assets';
 
 // Input component
-const InputField = ({ type, placeholder, name, value, onChange }) => (
+const InputField = ({ type, placeholder, name, value,address, handleChange }) => (
   <input
     className='w-full px-2 py-2.5 border border-gray-500 rounded outline-none text-gray-500 focus:border-primary transition'
     type={type}
     placeholder={placeholder}
     name={name}
+    address={address}
     value={value}
-    onChange={onChange}
+    handleChange={handleChange}
   />
 );
 
@@ -51,22 +52,37 @@ function AddAdress() {
 
             <div className='grid grid-cols-2 gap-4'>
               <InputField
+                address={address}
                 name='firstName'
                 type='text'
                 placeholder='First name'
                 value={address.firstName}
-                onChange={handleChange}
+                handleChange={handleChange}
               />
               <InputField
+                address={address}
                 name='lastName'
                 type='text'
                 placeholder='Last name'
                 value={address.lastName}
-                onChange={handleChange}
+                handleChange={handleChange}
               />
             </div>
             <InputField handleChange={handleChange} address={address} name='email' type="email" placeholder="Email address"/>
             {/* Add more input fields here as needed */}
+            <InputField handleChange={handleChange} address={address} name="Street" type='text' placeholder="Street"/>
+          <div className='grid grid-cols-2 gap-4'>
+             <InputField handleChange={handleChange} address={address} name="City" type='text' placeholder="City"/>
+              <InputField handleChange={handleChange} address={address} name="Country" type='text' placeholder="Country"/>
+          </div>
+          <div className='grid grid-cols-2 gap-4'>
+             <InputField handleChange={handleChange} address={address} name="Zipcode" type='number' placeholder="Zipcode"/>
+              <InputField handleChange={handleChange} address={address} name="State" type='text' placeholder="State"/>
+          </div>
+           <InputField handleChange={handleChange} address={address} name="Phone" type='number' placeholder="Phone"/>
+           <button className='w-full mt-6 bg-primary text-white py-3 hover:bg-primary-dull transition cursor-pointer uppercase'>
+            Save address
+           </button>
           </form>
         </div>
         <img
